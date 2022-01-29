@@ -3,13 +3,14 @@
 import csv
 from matplotlib import pyplot
 
-pyplot.rcParams['font.sans-serif'] = ['Arial']  # 用来正常显示中文标签
+
 f = open("data1.csv", "r", encoding="utf-8")
+
 csvReader = csv.reader(f)
 price, year = [], []
 for row in csvReader:
-    year.append(row[0])
-    price.append(row[4])
+    year.append(row[1])
+    price.append(row[5])
     header_row = next(csvReader)
 pyplot.plot(year, price)
 pyplot.title("收盘价")
