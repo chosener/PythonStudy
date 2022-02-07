@@ -1,5 +1,6 @@
 # coding:utf-8
 from appium import webdriver
+from appium.webdriver.common.appiumby import AppiumBy
 from appium.webdriver.common.touch_action import TouchAction
 import time
 
@@ -44,6 +45,8 @@ print(driver.contexts)
 # 注意，这里是不需要切换的，别踩坑了！！！！！！
 # driver.switch_to.context('WEBVIEW_com.tencent.mm:tools')
 time.sleep(3)
+
+driver.find_element(AppiumBy.ACCESSIBILITY_ID,"签到任务").click()
 
 # # tap触摸右下角那个菜单坐标 [873,1654], [1080,1861]
 # driver.tap([(873, 1654), (1080, 1861)],  500)
