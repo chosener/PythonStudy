@@ -103,7 +103,29 @@ def tap_back():
     time.sleep(1)
     print("点击了返回!")
 
-tap_gift()
+# tap_gift()
+
+#我的
+#960 2230
+def tap_mine():
+    driver.tap([(960, 2230)], 200)
+    time.sleep(5)
+    print("点击了我的!")
+
+# className复数定位
+loc_class = 'new UiSelector().className("android.view.View").text(11)'
+aa = driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, loc_class)
+
+for item in aa:
+    if item.get_attribute("index") == 11:
+        print(item)
+
+# class_text = 'className("android.widget.TextView").index(11)'
+# aa = driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR,class_text)
+print(len(aa))
+print(aa)
+
+#//*[@id="sourceContainer"]/div/div[3]/div/div/div/div[40]/span[3]/span/span/b
 
 time.sleep(3)
 print("结束...")
